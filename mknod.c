@@ -11,7 +11,7 @@ int main(void)
 {
 	errno = 0;
 
-	unsigned int dev = 0xfacefeed00000000ULL | makedev(1, 7);
+	unsigned int dev = (unsigned long) 0xfacefeed00000000ULL | makedev(1, 7);
 	syscall(__NR_mknod, "mknod.c", S_IFCHR | 0777, dev);
 
 	if (errno != EEXIST) {
