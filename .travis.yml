@@ -6,5 +6,11 @@ matrix:
   include:
     - compiler: gcc
       arch: amd64
+      env:
+        - TARGET=x86
+        - STACKTRACE=no
     - compiler: gcc
       arch: ppc64le
+      env:
+        - TARGET=ppc64le
+        - STACKTRACE=libdw
