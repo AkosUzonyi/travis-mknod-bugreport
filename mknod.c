@@ -12,7 +12,7 @@ int main(void)
 	errno = 0;
 
 	unsigned long dev = 0xfacefeed00000000ULL | makedev(1, 7);
-	syscall(__NR_mknod, "mknod.c", S_IFCHR | 0777, dev);
+	syscall(__NR_mknod, "/", S_IFCHR | 0777, dev);
 
 	if (errno != EEXIST) {
 		perror("mknod");
