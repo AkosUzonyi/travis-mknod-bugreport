@@ -9,7 +9,7 @@
 int main(void)
 {
         errno = 0;
-        mknod("mknod.c", S_IFCHR | 024, makedev(1, 7));
+        mknod("mknod.c", S_IFCHR | 024, (unsigned long) 0xdeadbeef00000000ULL | makedev(1, 7));
         if (errno != EEXIST) {
                 perror("mknod");
                 exit(1);
