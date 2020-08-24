@@ -4,5 +4,7 @@ script: ./run.sh
 
 matrix:
   include:
-    - arch: amd64
-    - arch: ppc64le
+    - compiler: gcc
+      arch: amd64
+    - compiler: gcc
+      arch: ppc64le
