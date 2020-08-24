@@ -1,0 +1,26 @@
+language: c
+
+dist: bionic
+
+script: travis_wait 40 run.sh
+
+git:
+  depth: 2147483647
+
+env:
+  global:
+    - KBRANCH="v5.8"
+    - KHEADERS=""
+    - SLEEP_A_BIT="sleep 0.2"
+    - STACKTRACE=""
+    - TARGET=""
+    - TIMEOUT_DURATION=""
+    - VERBOSE="1"
+
+matrix:
+  include:
+    - compiler: gcc
+      arch: ppc64le
+      env:
+        - TARGET=ppc64le
+        - STACKTRACE=libdw
