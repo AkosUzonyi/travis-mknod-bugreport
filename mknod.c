@@ -11,7 +11,7 @@ static long
 call_mknod(unsigned short mode, unsigned long dev)
 {
 	unsigned long lmode = (unsigned long) 0xffffffffffff0000ULL | mode;
-	return syscall(__NR_mknod, "mknod.c", lmode, dev);
+	return syscall(__NR_mknod, "mknod.c", mode, dev);
 }
 
 int main(void)
