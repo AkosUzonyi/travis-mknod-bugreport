@@ -9,15 +9,15 @@
 
 int main(void)
 {
-        errno = 0;
+	errno = 0;
 
-        unsigned int dev = 0xfacefeed00000000ULL | makedev(1, 7);
+	unsigned int dev = 0xfacefeed00000000ULL | makedev(1, 7);
 	syscall(__NR_mknod, "mknod.c", S_IFCHR | 0777, dev);
 
-        if (errno != EEXIST) {
-                perror("mknod");
-                exit(1);
-        }
+	if (errno != EEXIST) {
+		perror("mknod");
+		exit(1);
+	}
 
-        return 0;
+	return 0;
 }
