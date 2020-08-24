@@ -2,20 +2,7 @@ language: c
 
 dist: bionic
 
-script: travis_wait 40 run.sh
-
-git:
-  depth: 2147483647
-
-env:
-  global:
-    - KBRANCH="v5.8"
-    - KHEADERS=""
-    - SLEEP_A_BIT="sleep 0.2"
-    - STACKTRACE=""
-    - TARGET=""
-    - TIMEOUT_DURATION=""
-    - VERBOSE="1"
+script: ./run.sh
 
 matrix:
   include:
