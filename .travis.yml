@@ -1,18 +1,8 @@
 language: c
 
-dist: bionic
-
 script: ./run.sh
 
 matrix:
   include:
-    - compiler: gcc
-      arch: amd64
-      env:
-        - TARGET=x86
-        - STACKTRACE=no
-    - compiler: gcc
-      arch: ppc64le
-      env:
-        - TARGET=ppc64le
-        - STACKTRACE=libdw
+    - arch: amd64
+    - arch: ppc64le
