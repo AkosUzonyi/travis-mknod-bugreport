@@ -1,7 +1,5 @@
 language: c
 
-dist: bionic
-
 script: ./run.sh
 
 matrix:
